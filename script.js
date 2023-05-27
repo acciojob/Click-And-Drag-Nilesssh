@@ -1,5 +1,4 @@
-// Your code here.
-// Store the initial mouse position and scroll position
+ // Store the initial mouse position and scroll position
     let initialMouseX = 0;
     let initialScrollX = 0;
 
@@ -12,7 +11,7 @@
     // Event listener for mouse down event
     itemsContainer.addEventListener('mousedown', (event) => {
       // Set the initial mouse position and scroll position
-      initialMouseX = event.pageX - itemsContainer.offsetLeft;
+      initialMouseX = event.pageX;
       initialScrollX = itemsContainer.scrollLeft;
 
       // Set the dragging flag to true
@@ -27,8 +26,7 @@
       if (!isDragging) return; // Exit if dragging is not in progress
 
       // Calculate the distance moved by the mouse
-      const mouseX = event.pageX - itemsContainer.offsetLeft;
-      const distance = mouseX - initialMouseX;
+      const distance = event.pageX - initialMouseX;
 
       // Update the scroll position based on the mouse movement
       itemsContainer.scrollLeft = initialScrollX - distance;
